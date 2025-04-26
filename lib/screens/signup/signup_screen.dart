@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
 import 'package:instagram_flutter_app/screens/login/login_screen.dart';
@@ -25,7 +24,7 @@ class SignUpScreen extends StatelessWidget {
             SizedBox(height: 20),
             UIHelper.customTextField(
               controller: passwordController,
-              text: "Email",
+              text: "Password",
               toHide: true,
             ),
             SizedBox(height: 20),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
+import 'package:instagram_flutter_app/screens/navbar/bottom_navigation_bar.dart';
 import 'package:instagram_flutter_app/screens/signup/signup_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -39,7 +40,15 @@ class LoginScreen extends StatelessWidget {
               ],
             ),
             SizedBox(height: 10),
-            UIHelper.customButton(text: "Login", callback: () {}),
+            UIHelper.customButton(
+              text: "Login",
+              callback: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => BottomNavigationBarScreen()),
+                );
+              },
+            ),
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -72,12 +81,6 @@ class LoginScreen extends StatelessWidget {
           ],
         ),
       ),
-
-      // appBar: AppBar(
-      //   title: Text("Login Screen"),
-      //   centerTitle: true,
-      //   backgroundColor: Colors.red,
-      // ),
     );
   }
 }
