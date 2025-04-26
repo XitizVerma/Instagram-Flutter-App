@@ -184,10 +184,22 @@ class SearchScreen extends StatelessWidget {
                   child: Image.network(
                     ImageLinks.getImages()[index]["img"],
                     fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) {
+                      return Center(
+                        child: Text(
+                          ImageLinks.getImages()[index]["title"],
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      );
+                    },
                   ),
                 );
               },
-              itemCount: 24,
+              itemCount: 50,
             ),
           ),
         ],
