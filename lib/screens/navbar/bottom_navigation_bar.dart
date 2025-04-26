@@ -25,46 +25,50 @@ class _BottomNavigationBarState extends State<BottomNavigationBarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(children: pages, index: currentIndex),
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
-        selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
-        unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, color: Colors.grey),
-        backgroundColor: Colors.black,
-        onTap: (index) {
-          setState(() {
-            currentIndex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "Home",
+      bottomNavigationBar:
+        Container(
+          height: 100,
+          child: BottomNavigationBar(
+            currentIndex: currentIndex,
+            type: BottomNavigationBarType.fixed,
+            selectedItemColor: Colors.white,
+            unselectedItemColor: Colors.grey,
+            selectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, color: Colors.white),
+            unselectedLabelStyle: TextStyle(fontWeight: FontWeight.w600, color: Colors.grey),
+            backgroundColor: Colors.black,
+            onTap: (index) {
+              setState(() {
+                currentIndex = index;
+              });
+            },
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: "Home",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.search),
+                label: "Search",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.plus_app),
+                label: "Upload",
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(CupertinoIcons.heart),
+                label: "Heart",
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  "assets/images/profile.png",
+                  width: 22,
+                  height: 25,
+                ),
+                label: "Profile",
+              ),
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: "Search",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.plus_app),
-            label: "Upload",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.heart),
-            label: "Heart",
-          ),
-          BottomNavigationBarItem(
-            icon: Image.asset(
-              "assets/images/profile.png",
-              width: 22,
-              height: 25,
-            ),
-            label: "Profile",
-          ),
-        ],
-      ),
+        )
     );
   }
 }
