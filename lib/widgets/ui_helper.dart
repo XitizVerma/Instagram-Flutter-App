@@ -11,8 +11,8 @@ class UIHelper {
       width: 343,
       decoration: BoxDecoration(
         color: Color(0XFF121212),
-        border: Border.all(color: Color(0XFFFFFFFF)),
-        borderRadius: BorderRadius.circular(5),
+        border: Border.all(color: Color(0XFFFFFFFF), width: 1.5),
+        borderRadius: BorderRadius.circular(15),
       ),
       child: Padding(
         padding: EdgeInsets.only(left: 15),
@@ -23,9 +23,14 @@ class UIHelper {
             hintText: text,
             hintStyle: TextStyle(
               fontSize: 14,
-              fontWeight: FontWeight.normal,
+              fontWeight: FontWeight.w600,
               color: Colors.grey.shade100,
             ),
+            border: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
           ),
         ),
       ),
@@ -59,14 +64,14 @@ class UIHelper {
       height: 45,
       width: 343,
       child: ElevatedButton(
-        onPressed: (){
+        onPressed: () {
           callback();
         },
         style: ElevatedButton.styleFrom(
           backgroundColor: Color(0XFF3797EF),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5))
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         ),
-        child: Text(text, style: TextStyle(fontSize: 14, color: Colors.white),)
+        child: Text(text, style: TextStyle(fontSize: 14, color: Colors.white)),
       ),
     );
   }

@@ -30,7 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             UIHelper.customImage(imageUrl: "instagram-icon.png"),
             SizedBox(height: 10),
-            UIHelper.customImage(imageUrl: "instagram-logo.png"),
+            UIHelper.customImage(imageUrl: "instagram-logo-text.png"),
           ],
         ),
       ),

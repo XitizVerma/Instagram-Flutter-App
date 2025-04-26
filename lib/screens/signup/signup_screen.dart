@@ -1,10 +1,13 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
-import 'package:instagram_flutter_app/screens/signup/signup_screen.dart';
+import 'package:instagram_flutter_app/screens/login/login_screen.dart';
 
-class LoginScreen extends StatelessWidget {
+class SignUpScreen extends StatelessWidget {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController usernameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,48 +25,28 @@ class LoginScreen extends StatelessWidget {
             SizedBox(height: 20),
             UIHelper.customTextField(
               controller: passwordController,
-              text: "Password",
+              text: "Email",
               toHide: true,
             ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(right: 20),
-                  child: UIHelper.customTextButton(
-                    text: "Forgot password?",
-                    callback: () {},
-                  ),
-                ),
-              ],
+            SizedBox(height: 20),
+            UIHelper.customTextField(
+              controller: usernameController,
+              text: "Username",
+              toHide: false,
             ),
-            SizedBox(height: 10),
-            UIHelper.customButton(text: "Login", callback: () {}),
+            SizedBox(height: 20),
+            UIHelper.customButton(text: "Sign Up", callback: () {}),
             SizedBox(height: 20),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                UIHelper.customImage(imageUrl: "facebook-icon.png"),
+                Text("Already have an account?"),
                 UIHelper.customTextButton(
-                  text: "Login with Facebook",
-                  callback: () {},
-                ),
-              ],
-            ),
-            SizedBox(height: 20),
-            Text("OR"),
-            SizedBox(height: 20),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Don't have an account?"),
-                UIHelper.customTextButton(
-                  text: "Sign Up",
+                  text: "Login",
                   callback: () {
                     Navigator.pushReplacement(
                       context,
-                      MaterialPageRoute(builder: (context) => SignUpScreen()),
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
                     );
                   },
                 ),
@@ -72,12 +55,6 @@ class LoginScreen extends StatelessWidget {
           ],
         ),
       ),
-
-      // appBar: AppBar(
-      //   title: Text("Login Screen"),
-      //   centerTitle: true,
-      //   backgroundColor: Colors.red,
-      // ),
     );
   }
 }
