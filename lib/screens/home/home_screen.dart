@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
+import 'package:instagram_flutter_app/screens/message/message_screen.dart';
 
 import '../../widgets/image_links.dart';
 
@@ -28,7 +29,12 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MessageScreen()),
+              );
+            },
             icon: UIHelper.customImage(
               imageUrl: "telegram-icon.png",
               height: 30,
@@ -50,8 +56,10 @@ class HomeScreen extends StatelessWidget {
                     child: Column(
                       children: [
                         Container(
-                          height: 66, // Slightly larger than avatar (2*radius + border thickness)
-                          width: 66,  // Slightly larger than avatar (2*radius + border thickness)
+                          height:
+                              66, // Slightly larger than avatar (2*radius + border thickness)
+                          width:
+                              66, // Slightly larger than avatar (2*radius + border thickness)
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             gradient: LinearGradient(
@@ -69,12 +77,15 @@ class HomeScreen extends StatelessWidget {
                             child: Container(
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
-                                color: Colors.black, // Background color between gradient and image
+                                color:
+                                    Colors
+                                        .black, // Background color between gradient and image
                               ),
                               child: Padding(
                                 padding: EdgeInsets.all(2), // Inner padding
                                 child: CircleAvatar(
-                                  radius: 25, // Original radius minus border thickness
+                                  radius:
+                                      25, // Original radius minus border thickness
                                   backgroundImage: NetworkImage(
                                     storyImages[index]["img"].toString(),
                                   ),
@@ -107,14 +118,22 @@ class HomeScreen extends StatelessWidget {
                     width: double.infinity,
                     color: Colors.black12,
                     child: ListTile(
-                      leading: UIHelper.customImage(imageUrl: "person/person3.png"),
+                      leading: UIHelper.customImage(
+                        imageUrl: "person/person3.png",
+                      ),
                       title: Text(
-                        "its_me_soumya",
-                        style: TextStyle(fontSize: 12, color: Color(0XFFF9F9F9)),
+                        "soumya_garg",
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Color(0XFFF9F9F9),
+                        ),
                       ),
                       subtitle: Text(
                         "Jaipur, Rajasthan",
-                        style: TextStyle(fontSize: 10, color: Color(0XFFF9F9F9)),
+                        style: TextStyle(
+                          fontSize: 10,
+                          color: Color(0XFFF9F9F9),
+                        ),
                       ),
                       trailing: Icon(Icons.more_horiz),
                     ),
@@ -137,28 +156,37 @@ class HomeScreen extends StatelessWidget {
                       SizedBox(width: 20),
                       UIHelper.customImage(imageUrl: "telegram-icon.png"),
                       SizedBox(width: 230),
-                      Icon(Icons.bookmark_border)
+                      Icon(Icons.bookmark_border),
                     ],
                   ),
                   SizedBox(height: 10),
                   Row(
                     children: [
                       SizedBox(width: 20),
-                      UIHelper.customImage(imageUrl: "person/person1.png", width: 10),
-                      UIHelper.customImage(imageUrl: "person/person4.png", width: 10),
+                      UIHelper.customImage(
+                        imageUrl: "person/person1.png",
+                        width: 10,
+                      ),
+                      UIHelper.customImage(
+                        imageUrl: "person/person4.png",
+                        width: 10,
+                      ),
                       SizedBox(width: 10),
-                      Text("Liked by atisha_sharma and 6789 others")
+                      Text("Liked by atisha_sharma and 6789 others"),
                     ],
                   ),
                   SizedBox(height: 5),
                   Row(
                     children: [
                       SizedBox(width: 20),
-                      Text("its_me_soumya", style: TextStyle(fontWeight: FontWeight.w600)),
+                      Text(
+                        "soumya_garg",
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      ),
                       SizedBox(width: 10),
-                      Text("Jaipur Pink City Memories 2k25 🩷")
+                      Text("Jaipur Pink City Memories 2k25 🩷"),
                     ],
-                  )
+                  ),
                 ],
               ),
             ],
