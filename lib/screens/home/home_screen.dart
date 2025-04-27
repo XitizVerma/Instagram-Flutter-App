@@ -40,19 +40,47 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         children: [
           SizedBox(
-            height: 80,
+            height: 85,
             child: Padding(
               padding: const EdgeInsets.only(left: 20),
               child: ListView.builder(
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(right: 10),
                     child: Column(
                       children: [
-                        CircleAvatar(
-                          radius: 30,
-                          backgroundImage: NetworkImage(
-                            storyImages[index]["img"].toString(),
+                        Container(
+                          height: 66, // Slightly larger than avatar (2*radius + border thickness)
+                          width: 66,  // Slightly larger than avatar (2*radius + border thickness)
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            gradient: LinearGradient(
+                              begin: Alignment.topRight,
+                              end: Alignment.bottomLeft,
+                              colors: [
+                                Colors.pink,
+                                Colors.orange,
+                                Colors.yellow,
+                              ],
+                            ),
+                          ),
+                          child: Padding(
+                            padding: EdgeInsets.all(3), // Border thickness
+                            child: Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                color: Colors.black, // Background color between gradient and image
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.all(2), // Inner padding
+                                child: CircleAvatar(
+                                  radius: 25, // Original radius minus border thickness
+                                  backgroundImage: NetworkImage(
+                                    storyImages[index]["img"].toString(),
+                                  ),
+                                ),
+                              ),
+                            ),
                           ),
                         ),
                         SizedBox(height: 5),
