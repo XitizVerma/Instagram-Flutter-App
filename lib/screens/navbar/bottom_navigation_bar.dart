@@ -59,11 +59,7 @@ class _BottomNavigationBarState extends State<BottomNavigationBarScreen> {
                 label: "Heart",
               ),
               BottomNavigationBarItem(
-                icon: Image.asset(
-                  "assets/images/profile.png",
-                  width: 22,
-                  height: 25,
-                ),
+                icon: UIHelper.customImage(imageUrl: "profile.png", width: 22, height: 25),
                 label: "Profile",
               ),
             ],

@@ -37,8 +37,17 @@ class UIHelper {
     );
   }
 
-  static Widget customImage({required String imageUrl}) {
-    return Image.asset("assets/images/$imageUrl");
+  static Widget customImage({
+    required String imageUrl,
+    double? height,
+    double? width,
+  }) {
+    return Image.asset(
+      "assets/images/$imageUrl",
+      height: height,
+      width: width,
+      fit: BoxFit.cover,
+    );
   }
 
   static Widget customTextButton({
