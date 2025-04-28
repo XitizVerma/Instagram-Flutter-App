@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
 import 'package:instagram_flutter_app/widgets/image_links.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 
 class SearchScreen extends StatelessWidget {
   TextEditingController searchController = TextEditingController();
+
+  var images = ImageLinks.getImages();
 
   @override
   Widget build(BuildContext context) {
@@ -175,31 +178,35 @@ class SearchScreen extends StatelessWidget {
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 3,
               ),
+              addAutomaticKeepAlives: false,
+              addRepaintBoundaries: true,
               itemBuilder: (context, index) {
                 return Container(
                   clipBehavior: Clip.antiAlias,
                   height: 124,
                   width: 124,
                   decoration: BoxDecoration(),
-                  child: Image.network(
-                    ImageLinks.getImages()[index]["img"],
+                  child: CachedNetworkImage(
+                    imageUrl: images[index]["img"],
                     fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) {
-                      return Center(
-                        child: Text(
-                          ImageLinks.getImages()[index]["title"],
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.bold,
+                    placeholder:
+                        (context, url) =>
+                            Center(child: CircularProgressIndicator(strokeWidth: 2)),
+                    errorWidget:
+                        (context, url, error) => Center(
+                          child: Text(
+                            images[index]["title"],
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      );
-                    },
                   ),
                 );
               },
-              itemCount: 50,
+              itemCount: 48,
             ),
           ),
         ],

@@ -90,10 +90,6 @@ class ImageLinks {
         "title": 'Salad'
       },
       {
-        "img": 'https://images.unsplash.com/photo-1505699261627-7ea7fe91c200',
-        "title": 'Sunset'
-      },
-      {
         "img": 'https://images.unsplash.com/photo-1470770903676-69b98201ea1c',
         "title": 'Night Sky'
       },
@@ -164,10 +160,6 @@ class ImageLinks {
       {
         "img": 'https://images.unsplash.com/photo-1520453803296-c39eabe2dab4',
         "title": 'Minimalist Room'
-      },
-      {
-        "img": 'https://images.unsplash.com/photo-1523275335684-37898b6baf30',
-        "title": 'Smart Watch'
       },
       {
         "img": 'https://images.unsplash.com/photo-1554080353-a576cf803bda',
