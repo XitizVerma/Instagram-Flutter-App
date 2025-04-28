@@ -4,6 +4,7 @@ import 'package:instagram_flutter_app/utils/image_links.dart';
 import 'package:instagram_flutter_app/utils/utils.dart';
 
 class ProfilePostScreen extends StatelessWidget {
+
   var images = ImageLinks.getImages();
 
   @override

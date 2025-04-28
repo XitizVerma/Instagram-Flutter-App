@@ -46,155 +46,311 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          SizedBox(
-            height: 85,
-            child: Padding(
-              padding: const EdgeInsets.only(left: 20),
-              child: ListView.builder(
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 10),
-                    child: Column(
-                      children: [
-                        Container(
-                          height:
-                              66, // Slightly larger than avatar (2*radius + border thickness)
-                          width:
-                              66, // Slightly larger than avatar (2*radius + border thickness)
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            gradient: LinearGradient(
-                              begin: Alignment.topRight,
-                              end: Alignment.bottomLeft,
-                              colors: [
-                                Colors.pink,
-                                Colors.orange,
-                                Colors.yellow,
-                              ],
-                            ),
-                          ),
-                          child: Padding(
-                            padding: EdgeInsets.all(3), // Border thickness
-                            child: Container(
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                                color:
-                                    Colors
-                                        .black, // Background color between gradient and image
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            SizedBox(
+              height: 85,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20),
+                child: ListView.builder(
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 10),
+                      child: Column(
+                        children: [
+                          Container(
+                            height:
+                                66, // Slightly larger than avatar (2*radius + border thickness)
+                            width:
+                                66, // Slightly larger than avatar (2*radius + border thickness)
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: LinearGradient(
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
+                                colors: [
+                                  Colors.pink,
+                                  Colors.orange,
+                                  Colors.yellow,
+                                ],
                               ),
-                              child: Padding(
-                                padding: EdgeInsets.all(2), // Inner padding
-                                child: CircleAvatar(
-                                  radius:
-                                      25, // Original radius minus border thickness
-                                  backgroundImage: NetworkImage(
-                                    storyImages[index]["img"].toString(),
+                            ),
+                            child: Padding(
+                              padding: EdgeInsets.all(3), // Border thickness
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  color:
+                                      Colors
+                                          .black, // Background color between gradient and image
+                                ),
+                                child: Padding(
+                                  padding: EdgeInsets.all(2), // Inner padding
+                                  child: CircleAvatar(
+                                    radius:
+                                        25, // Original radius minus border thickness
+                                    backgroundImage: NetworkImage(
+                                      storyImages[index]["img"].toString(),
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                           ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          storyImages[index]["title"],
-                          style: TextStyle(fontSize: 10),
-                        ),
-                      ],
-                    ),
-                  );
-                },
-                itemCount: 10,
-                scrollDirection: Axis.horizontal,
+                          SizedBox(height: 5),
+                          Text(
+                            storyImages[index]["title"],
+                            style: TextStyle(fontSize: 10),
+                          ),
+                        ],
+                      ),
+                    );
+                  },
+                  itemCount: 10,
+                  scrollDirection: Axis.horizontal,
+                ),
               ),
             ),
-          ),
 
-          Column(
-            children: [
-              Column(
-                children: [
-                  Container(
-                    height: 54,
-                    width: double.infinity,
-                    color: Colors.black12,
-                    child: ListTile(
-                      leading: UIHelper.customImage(
-                        imageUrl: "person/person3.png",
-                      ),
-                      title: Text(
-                        Constants.SOUMYA_GARG,
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Color(0XFFF9F9F9),
+            Column(
+              children: [
+                Column(
+                  children: [
+                    Container(
+                      height: 54,
+                      width: double.infinity,
+                      color: Colors.black12,
+                      child: ListTile(
+                        leading: UIHelper.customImage(imageUrl: "profile.png"),
+                        title: Text(
+                          Constants.ITS_ME_XITIZ,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0XFFF9F9F9),
+                          ),
                         ),
-                      ),
-                      subtitle: Text(
-                        "Jaipur, Rajasthan",
-                        style: TextStyle(
-                          fontSize: 10,
-                          color: Color(0XFFF9F9F9),
+                        subtitle: Text(
+                          "Jaipur, Rajasthan",
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Color(0XFFF9F9F9),
+                          ),
                         ),
+                        trailing: Icon(Icons.more_horiz),
                       ),
-                      trailing: Icon(Icons.more_horiz),
                     ),
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    height: 375,
-                    width: double.infinity,
-                    clipBehavior: Clip.antiAlias,
-                    decoration: BoxDecoration(),
-                    child: UIHelper.customImage(imageUrl: "posts/jaipur.png"),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    children: [
-                      SizedBox(width: 20),
-                      Icon(CupertinoIcons.heart),
-                      SizedBox(width: 20),
-                      UIHelper.customImage(imageUrl: "comment.png"),
-                      SizedBox(width: 20),
-                      UIHelper.customImage(imageUrl: "telegram-icon.png"),
-                      SizedBox(width: 230),
-                      Icon(Icons.bookmark_border),
-                    ],
-                  ),
-                  SizedBox(height: 10),
-                  Row(
-                    children: [
-                      SizedBox(width: 20),
-                      UIHelper.customImage(
-                        imageUrl: "person/person1.png",
-                        width: 10,
+                    SizedBox(height: 20),
+                    Container(
+                      height: 375,
+                      width: double.infinity,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(),
+                      child: UIHelper.customImage(imageUrl: "posts/jaipur.png"),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        SizedBox(width: 20),
+                        Icon(CupertinoIcons.heart),
+                        SizedBox(width: 20),
+                        UIHelper.customImage(imageUrl: "comment.png"),
+                        SizedBox(width: 20),
+                        UIHelper.customImage(imageUrl: "telegram-icon.png"),
+                        SizedBox(width: 230),
+                        Icon(Icons.bookmark_border),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        SizedBox(width: 20),
+                        UIHelper.customImage(
+                          imageUrl: "person/person1.png",
+                          width: 10,
+                        ),
+                        UIHelper.customImage(
+                          imageUrl: "person/person4.png",
+                          width: 10,
+                        ),
+                        SizedBox(width: 10),
+                        Text("Liked by atisha_sharma and 6789 others"),
+                      ],
+                    ),
+                    SizedBox(height: 5),
+                    Row(
+                      children: [
+                        SizedBox(width: 20),
+                        Text(
+                          Constants.ITS_ME_XITIZ,
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(width: 10),
+                        Text("Jaipur Pink City Memories 2k25 🩷"),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Column(
+                  children: [
+                    Container(
+                      height: 54,
+                      width: double.infinity,
+                      color: Colors.black12,
+                      child: ListTile(
+                        leading: UIHelper.customImage(imageUrl: "profile.png"),
+                        title: Text(
+                          Constants.ITS_ME_XITIZ,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0XFFF9F9F9),
+                          ),
+                        ),
+                        subtitle: Text(
+                          "Tokyo, Japan",
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Color(0XFFF9F9F9),
+                          ),
+                        ),
+                        trailing: Icon(Icons.more_horiz),
                       ),
-                      UIHelper.customImage(
-                        imageUrl: "person/person4.png",
-                        width: 10,
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      height: 375,
+                      width: double.infinity,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(),
+                      child: UIHelper.customImage(imageUrl: "posts/tokyo.png"),
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        SizedBox(width: 20),
+                        Icon(CupertinoIcons.heart),
+                        SizedBox(width: 20),
+                        UIHelper.customImage(imageUrl: "comment.png"),
+                        SizedBox(width: 20),
+                        UIHelper.customImage(imageUrl: "telegram-icon.png"),
+                        SizedBox(width: 230),
+                        Icon(Icons.bookmark_border),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        SizedBox(width: 20),
+                        UIHelper.customImage(
+                          imageUrl: "person/person1.png",
+                          width: 10,
+                        ),
+                        UIHelper.customImage(
+                          imageUrl: "person/person4.png",
+                          width: 10,
+                        ),
+                        SizedBox(width: 10),
+                        Text("Liked by atisha_sharma and 6789 others"),
+                      ],
+                    ),
+                    SizedBox(height: 5),
+                    Row(
+                      children: [
+                        SizedBox(width: 20),
+                        Text(
+                          Constants.ITS_ME_XITIZ,
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(width: 10),
+                        Text("Tokyo Memories 2k25 ⛩️"),
+                      ],
+                    ),
+                  ],
+                ),
+                SizedBox(height: 20),
+                Column(
+                  children: [
+                    Container(
+                      height: 54,
+                      width: double.infinity,
+                      color: Colors.black12,
+                      child: ListTile(
+                        leading: UIHelper.customImage(imageUrl: "profile.png"),
+                        title: Text(
+                          Constants.ITS_ME_XITIZ,
+                          style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0XFFF9F9F9),
+                          ),
+                        ),
+                        subtitle: Text(
+                          "Maldives",
+                          style: TextStyle(
+                            fontSize: 10,
+                            color: Color(0XFFF9F9F9),
+                          ),
+                        ),
+                        trailing: Icon(Icons.more_horiz),
                       ),
-                      SizedBox(width: 10),
-                      Text("Liked by atisha_sharma and 6789 others"),
-                    ],
-                  ),
-                  SizedBox(height: 5),
-                  Row(
-                    children: [
-                      SizedBox(width: 20),
-                      Text(
-                      Constants.SOUMYA_GARG,
-                        style: TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                    SizedBox(height: 20),
+                    Container(
+                      height: 375,
+                      width: double.infinity,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(),
+                      child: UIHelper.customImage(
+                        imageUrl: "posts/maldives.png",
                       ),
-                      SizedBox(width: 10),
-                      Text("Jaipur Pink City Memories 2k25 🩷"),
-                    ],
-                  ),
-                ],
-              ),
-            ],
-          ),
-        ],
+                    ),
+                    SizedBox(height: 20),
+                    Row(
+                      children: [
+                        SizedBox(width: 20),
+                        Icon(CupertinoIcons.heart),
+                        SizedBox(width: 20),
+                        UIHelper.customImage(imageUrl: "comment.png"),
+                        SizedBox(width: 20),
+                        UIHelper.customImage(imageUrl: "telegram-icon.png"),
+                        SizedBox(width: 230),
+                        Icon(Icons.bookmark_border),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        SizedBox(width: 20),
+                        UIHelper.customImage(
+                          imageUrl: "person/person1.png",
+                          width: 10,
+                        ),
+                        UIHelper.customImage(
+                          imageUrl: "person/person4.png",
+                          width: 10,
+                        ),
+                        SizedBox(width: 10),
+                        Text("Liked by atisha_sharma and 6789 others"),
+                      ],
+                    ),
+                    SizedBox(height: 5),
+                    Row(
+                      children: [
+                        SizedBox(width: 20),
+                        Text(
+                          Constants.ITS_ME_XITIZ,
+                          style: TextStyle(fontWeight: FontWeight.w600),
+                        ),
+                        SizedBox(width: 10),
+                        Text("Maldives Memories 2k25 🌊⋆🐚🫧"),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

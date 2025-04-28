@@ -126,10 +126,6 @@ class ImageLinks {
         "title": 'Cactus'
       },
       {
-        "img": 'https://images.unsplash.com/photo-1560448075-4d7e80195232',
-        "title": 'Watch'
-      },
-      {
         "img": 'https://images.unsplash.com/photo-1550684376-efcbd6e3f031',
         "title": 'Sneakers'
       },
@@ -190,12 +186,12 @@ class ImageLinks {
         "title": 'Bike Trail'
       },
       {
-        "img": 'https://images.unsplash.com/photo-1494957742470-8adbcc0fb61f',
-        "title": 'Vinyl Records'
-      },
-      {
         "img": 'https://images.unsplash.com/photo-1490750967868-88aa4486c946',
         "title": 'Spring Flowers'
+      },
+      {
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCEp8_cR97PXkg3p4MBChCmBgv_d-qB5ejZB4IIPpbPKFO341IJgx1FkOhWWKxCMPWKws&usqp=CAU",
+        "title": "girl"
       }
     ];
   }
