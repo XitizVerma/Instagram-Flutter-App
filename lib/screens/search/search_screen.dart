@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
-import 'package:instagram_flutter_app/widgets/image_links.dart';
+import 'package:instagram_flutter_app/utils/image_links.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:instagram_flutter_app/utils/utils.dart';
 
 class SearchScreen extends StatelessWidget {
   TextEditingController searchController = TextEditingController();
@@ -181,21 +182,23 @@ class SearchScreen extends StatelessWidget {
               addAutomaticKeepAlives: false,
               addRepaintBoundaries: true,
               itemBuilder: (context, index) {
+                var randomNumber = Utils.generateRandomInt(48);
                 return Container(
                   clipBehavior: Clip.antiAlias,
                   height: 124,
                   width: 124,
                   decoration: BoxDecoration(),
                   child: CachedNetworkImage(
-                    imageUrl: images[index]["img"],
+                    imageUrl: images[randomNumber]["img"],
                     fit: BoxFit.cover,
                     placeholder:
-                        (context, url) =>
-                            Center(child: CircularProgressIndicator(strokeWidth: 2)),
+                        (context, url) => Center(
+                          child: CircularProgressIndicator(strokeWidth: 2),
+                        ),
                     errorWidget:
                         (context, url, error) => Center(
                           child: Text(
-                            images[index]["title"],
+                            images[randomNumber]["title"],
                             textAlign: TextAlign.center,
                             style: TextStyle(
                               color: Colors.grey,

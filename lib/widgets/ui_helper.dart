@@ -68,16 +68,19 @@ class UIHelper {
   static Widget customButton({
     required String text,
     required VoidCallback callback,
+    Color? backgroundColor,
+    double? width,
+    double? height
   }) {
     return SizedBox(
-      height: 45,
-      width: 343,
+      height: height ?? 45,
+      width: width ?? 343,
       child: ElevatedButton(
         onPressed: () {
           callback();
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: Color(0XFF3797EF),
+          backgroundColor: backgroundColor ?? Color(0XFF3797EF),
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         ),
         child: Text(text, style: TextStyle(fontSize: 14, color: Colors.white)),

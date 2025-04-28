@@ -2,11 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
 import 'package:instagram_flutter_app/screens/message/message_screen.dart';
+import 'package:instagram_flutter_app/utils/constants.dart';
 
-import '../../widgets/image_links.dart';
+import '../../utils/image_links.dart';
 
 class HomeScreen extends StatelessWidget {
-  final storyImages = ImageLinks.getImages();
+
+  var storyImages = ImageLinks.getImages();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -122,7 +125,7 @@ class HomeScreen extends StatelessWidget {
                         imageUrl: "person/person3.png",
                       ),
                       title: Text(
-                        "soumya_garg",
+                        Constants.SOUMYA_GARG,
                         style: TextStyle(
                           fontSize: 12,
                           color: Color(0XFFF9F9F9),
@@ -180,7 +183,7 @@ class HomeScreen extends StatelessWidget {
                     children: [
                       SizedBox(width: 20),
                       Text(
-                        "soumya_garg",
+                      Constants.SOUMYA_GARG,
                         style: TextStyle(fontWeight: FontWeight.w600),
                       ),
                       SizedBox(width: 10),

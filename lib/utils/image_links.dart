@@ -162,6 +162,10 @@ class ImageLinks {
         "title": 'Minimalist Room'
       },
       {
+        "img": 'https://images.unsplash.com/photo-1523275335684-37898b6baf30',
+        "title": 'Smart Watch'
+      },
+      {
         "img": 'https://images.unsplash.com/photo-1554080353-a576cf803bda',
         "title": 'Lemon Water'
       },

@@ -2,8 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
 import 'package:instagram_flutter_app/screens/navbar/bottom_navigation_bar.dart';
-import 'package:instagram_flutter_app/widgets/image_links.dart';
-import 'package:instagram_flutter_app/widgets/message_links.dart';
+import 'package:instagram_flutter_app/utils/constants.dart';
+import 'package:instagram_flutter_app/utils/image_links.dart';
+import 'package:instagram_flutter_app/utils/message_links.dart';
 
 class MessageScreen extends StatelessWidget {
   TextEditingController searchController = TextEditingController();
@@ -18,7 +19,7 @@ class MessageScreen extends StatelessWidget {
         leading: IconButton(onPressed: (){
           Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavigationBarScreen()));
         }, icon: Icon(CupertinoIcons.back)),
-        title: Text("its_me_xitiz"),
+        title: Text(Constants.ITS_ME_XITIZ),
         centerTitle: true,
         actions: [
           IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.plus))
