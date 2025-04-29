@@ -72,7 +72,6 @@ class _DownloadScreenState extends State<DownloadScreen> {
                       );
                     },
                   ),
-
                   SizedBox(height: 20),
 
                   Text(
