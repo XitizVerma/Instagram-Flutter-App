@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
+import 'package:instagram_flutter_app/integrations/camera_integration.dart';
 import 'package:instagram_flutter_app/screens/message/message_screen.dart';
 import 'package:instagram_flutter_app/utils/constants.dart';
 
@@ -16,7 +17,9 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 88,
         backgroundColor: Colors.black12,
-        leading: Icon(Icons.camera_alt_outlined, size: 35),
+        leading: IconButton(onPressed: () {
+          CameraIntegration.openCamera(context);
+        }, icon: Icon(Icons.camera_alt_outlined, size: 35)),
         title: UIHelper.customImage(
           imageUrl: "instagram-logo-text.png",
           width: 160,
