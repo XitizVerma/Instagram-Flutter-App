@@ -18,6 +18,7 @@ class ProfileScreen extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              SizedBox(width: 65),
               Icon(Icons.lock, size: 15),
               SizedBox(width: 5),
               Text(
@@ -46,74 +47,23 @@ class ProfileScreen extends StatelessWidget {
                           Padding(
                             padding: const EdgeInsets.only(top: 10),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly, // Distributes space evenly
                               children: [
-                                SizedBox(width: 20),
+                                // Profile Avatar
                                 CircleAvatar(
                                   radius: 40,
                                   backgroundImage: AssetImage(
                                     "assets/images/profile.png",
                                   ),
                                 ),
-                                SizedBox(width: 60),
-                                // Existing stats columns (Posts, Followers, Following)
-                                Column(
-                                  children: [
-                                    Text(
-                                      "10",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Text(
-                                      "Posts",
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(width: 20),
-                                Column(
-                                  children: [
-                                    Text(
-                                      "715",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Text(
-                                      "Followers",
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(width: 20),
-                                Column(
-                                  children: [
-                                    Text(
-                                      "864",
-                                      style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                    Text(
-                                      "Following",
-                                      style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w500,
-                                      ),
-                                    ),
-                                  ],
-                                ),
+
+                                // Stats Columns
+                                _buildStatColumn("10", "Posts"),
+                                _buildStatColumn("715", "Followers"),
+                                _buildStatColumn("864", "Following"),
                               ],
-                            ),
+                            )
+
                           ),
 
                           // Profile Description
@@ -250,4 +200,25 @@ class ProfileScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+Widget _buildStatColumn(String count, String label) {
+  return Column(
+    children: [
+      Text(
+        count,
+        style: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+      Text(
+        label,
+        style: TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+    ],
+  );
 }
