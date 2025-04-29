@@ -45,7 +45,7 @@ class SearchScreen extends StatelessWidget {
 
           SizedBox(height: 10),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
                 height: 32,
@@ -71,7 +71,6 @@ class SearchScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 7),
               Container(
                 height: 32,
                 decoration: BoxDecoration(
@@ -96,7 +95,6 @@ class SearchScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 7),
               Container(
                 height: 32,
                 decoration: BoxDecoration(
@@ -121,7 +119,6 @@ class SearchScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 7),
               Container(
                 height: 32,
                 decoration: BoxDecoration(
@@ -146,7 +143,6 @@ class SearchScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(width: 7),
               Container(
                 height: 32,
                 decoration: BoxDecoration(
