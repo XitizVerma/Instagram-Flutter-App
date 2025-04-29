@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 
-class CameraIntegration {
+class CameraService {
   // Method to open camera
   static Future<void> openCamera(BuildContext context) async {
     try {

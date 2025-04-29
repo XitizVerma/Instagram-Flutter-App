@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
-import 'package:instagram_flutter_app/integrations/camera_integration.dart';
+import 'package:instagram_flutter_app/services/camera_service.dart';
 import 'package:instagram_flutter_app/screens/message/message_screen.dart';
 import 'package:instagram_flutter_app/utils/constants.dart';
 
@@ -18,7 +18,7 @@ class HomeScreen extends StatelessWidget {
         toolbarHeight: 88,
         backgroundColor: Colors.black12,
         leading: IconButton(onPressed: () {
-          CameraIntegration.openCamera(context);
+          CameraService.openCamera(context);
         }, icon: Icon(Icons.camera_alt_outlined, size: 35)),
         title: UIHelper.customImage(
           imageUrl: "instagram-logo-text.png",
@@ -177,7 +177,7 @@ class HomeScreen extends StatelessWidget {
                           width: 10,
                         ),
                         SizedBox(width: 10),
-                        Text("Liked by atisha_sharma and 6789 others"),
+                        Text("Liked by ${Constants.NEHA_GUPTA} and 6789 others"),
                       ],
                     ),
                     SizedBox(height: 5),
@@ -254,7 +254,7 @@ class HomeScreen extends StatelessWidget {
                           width: 10,
                         ),
                         SizedBox(width: 10),
-                        Text("Liked by atisha_sharma and 6789 others"),
+                        Text("Liked by ${Constants.NEHA_GUPTA} and 6789 others"),
                       ],
                     ),
                     SizedBox(height: 5),
@@ -333,7 +333,7 @@ class HomeScreen extends StatelessWidget {
                           width: 10,
                         ),
                         SizedBox(width: 10),
-                        Text("Liked by atisha_sharma and 6789 others"),
+                        Text("Liked by ${Constants.NEHA_GUPTA} and 6789 others"),
                       ],
                     ),
                     SizedBox(height: 5),
