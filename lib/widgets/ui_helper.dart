@@ -5,14 +5,17 @@ class UIHelper {
     required TextEditingController controller,
     required String text,
     required bool toHide,
+    double? height,
+    double? width,
+    double? borderRadius
   }) {
     return Container(
-      height: 54,
-      width: 343,
+      height: height??54,
+      width: width?? 343,
       decoration: BoxDecoration(
         color: Color(0XFF121212),
         border: Border.all(color: Color(0XFFFFFFFF), width: 1.5),
-        borderRadius: BorderRadius.circular(15),
+        borderRadius: BorderRadius.circular(borderRadius??15),
       ),
       child: Padding(
         padding: EdgeInsets.only(left: 15),
