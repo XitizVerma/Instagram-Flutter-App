@@ -15,6 +15,7 @@ class ProfileScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.black,
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

@@ -16,7 +16,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 88,
-        backgroundColor: Colors.black12,
+        backgroundColor: Colors.black,
         leading: IconButton(onPressed: () {
           CameraService.openCamera(context);
         }, icon: Icon(Icons.camera_alt_outlined, size: 35)),

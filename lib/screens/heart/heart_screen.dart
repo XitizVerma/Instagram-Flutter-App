@@ -11,6 +11,7 @@ class HeartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.black,
         leading: IconButton(
           onPressed: () {
             Navigator.pushReplacement(
