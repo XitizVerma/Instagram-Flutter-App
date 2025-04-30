@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
 import 'package:instagram_flutter_app/services/download_service.dart';
+import 'package:instagram_flutter_app/utils/constants.dart';
 import 'package:instagram_flutter_app/utils/utils.dart';
 
 class DownloadScreen extends StatefulWidget {
@@ -10,8 +11,13 @@ class DownloadScreen extends StatefulWidget {
 
 class _DownloadScreenState extends State<DownloadScreen> {
   final TextEditingController downloadController = TextEditingController();
+  final List<String> items = [
+    Constants.DOWNLOAD_MENU_ITEM_PROFILE_PIC,
+    Constants.DOWNLOAD_MENU_ITEM_POST_PIC,
+  ];
 
   double downloadProgress = 0.0;
+  String selectedMenuValue = Constants.DOWNLOAD_MENU_ITEM_PROFILE_PIC;
 
   @override
   Widget build(BuildContext context) {
@@ -47,16 +53,29 @@ class _DownloadScreenState extends State<DownloadScreen> {
 
                   SizedBox(height: 20),
 
+                  UIHelper.customDropdownButton(
+                    items: items,
+                    width: Utils.getScreenWidth(context) * 0.5,
+                    selectedValue: selectedMenuValue,
+                    onChanged: (value) {
+                      setState(() {
+                        selectedMenuValue = value;
+                      });
+                    },
+                  ),
+
+                  SizedBox(height: 20),
+
                   UIHelper.customTextField(
                     controller: downloadController,
                     text: "Paste Link",
                     toHide: false,
                     width: Utils.getScreenWidth(context) * 0.8,
                     borderRadius: 5,
+                    trailingIcon: Icon(Icons.content_paste)
                   ),
 
                   SizedBox(height: 20),
-
                   UIHelper.customButton(
                     text: "Download",
                     width: Utils.getScreenWidth(context) * 0.8,
