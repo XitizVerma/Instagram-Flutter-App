@@ -8,7 +8,6 @@ import 'package:instagram_flutter_app/utils/constants.dart';
 import '../../utils/image_links.dart';
 
 class HomeScreen extends StatelessWidget {
-
   var storyImages = ImageLinks.getImages();
 
   @override
@@ -17,9 +16,12 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         toolbarHeight: 88,
         backgroundColor: Colors.black,
-        leading: IconButton(onPressed: () {
-          CameraService.openCamera(context);
-        }, icon: Icon(Icons.camera_alt_outlined, size: 35)),
+        leading: IconButton(
+          onPressed: () {
+            CameraService.openCamera(context);
+          },
+          icon: Icon(Icons.camera_alt_outlined, size: 35),
+        ),
         title: UIHelper.customImage(
           imageUrl: "instagram-logo-text.png",
           width: 160,
@@ -41,11 +43,7 @@ class HomeScreen extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => MessageScreen()),
               );
             },
-            icon: UIHelper.customImage(
-              imageUrl: "telegram-icon.png",
-              height: 30,
-              width: 30,
-            ),
+            icon: Icon(CupertinoIcons.paperplane, size: 35),
           ),
         ],
       ),
@@ -157,9 +155,9 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(width: 20),
                         Icon(CupertinoIcons.heart),
                         SizedBox(width: 20),
-                        UIHelper.customImage(imageUrl: "comment.png"),
+                        Icon(CupertinoIcons.chat_bubble),
                         SizedBox(width: 20),
-                        UIHelper.customImage(imageUrl: "telegram-icon.png"),
+                        Icon(CupertinoIcons.paperplane),
                         SizedBox(width: 230),
                         Icon(Icons.bookmark_border),
                       ],
@@ -177,7 +175,9 @@ class HomeScreen extends StatelessWidget {
                           width: 10,
                         ),
                         SizedBox(width: 10),
-                        Text("Liked by ${Constants.NEHA_GUPTA} and 6789 others"),
+                        Text(
+                          "Liked by ${Constants.NEHA_GUPTA} and 6789 others",
+                        ),
                       ],
                     ),
                     SizedBox(height: 5),
@@ -234,9 +234,9 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(width: 20),
                         Icon(CupertinoIcons.heart),
                         SizedBox(width: 20),
-                        UIHelper.customImage(imageUrl: "comment.png"),
+                        Icon(CupertinoIcons.chat_bubble),
                         SizedBox(width: 20),
-                        UIHelper.customImage(imageUrl: "telegram-icon.png"),
+                        Icon(CupertinoIcons.paperplane),
                         SizedBox(width: 230),
                         Icon(Icons.bookmark_border),
                       ],
@@ -254,7 +254,9 @@ class HomeScreen extends StatelessWidget {
                           width: 10,
                         ),
                         SizedBox(width: 10),
-                        Text("Liked by ${Constants.NEHA_GUPTA} and 6789 others"),
+                        Text(
+                          "Liked by ${Constants.NEHA_GUPTA} and 6789 others",
+                        ),
                       ],
                     ),
                     SizedBox(height: 5),
@@ -313,9 +315,9 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(width: 20),
                         Icon(CupertinoIcons.heart),
                         SizedBox(width: 20),
-                        UIHelper.customImage(imageUrl: "comment.png"),
+                        Icon(CupertinoIcons.chat_bubble),
                         SizedBox(width: 20),
-                        UIHelper.customImage(imageUrl: "telegram-icon.png"),
+                        Icon(CupertinoIcons.paperplane),
                         SizedBox(width: 230),
                         Icon(Icons.bookmark_border),
                       ],
@@ -333,7 +335,9 @@ class HomeScreen extends StatelessWidget {
                           width: 10,
                         ),
                         SizedBox(width: 10),
-                        Text("Liked by ${Constants.NEHA_GUPTA} and 6789 others"),
+                        Text(
+                          "Liked by ${Constants.NEHA_GUPTA} and 6789 others",
+                        ),
                       ],
                     ),
                     SizedBox(height: 5),

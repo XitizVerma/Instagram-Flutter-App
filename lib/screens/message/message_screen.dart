@@ -16,15 +16,22 @@ class MessageScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         toolbarHeight: 88,
-        leading: IconButton(onPressed: (){
-          Navigator.push(context, MaterialPageRoute(builder: (context) => BottomNavigationBarScreen()));
-        }, icon: Icon(CupertinoIcons.back)),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => BottomNavigationBarScreen(),
+              ),
+            );
+          },
+          icon: Icon(CupertinoIcons.back),
+        ),
         title: Text(Constants.ITS_ME_XITIZ),
         centerTitle: true,
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.plus))
+          IconButton(onPressed: () {}, icon: Icon(CupertinoIcons.plus)),
         ],
-        
       ),
       body: Column(
         children: [
@@ -41,28 +48,32 @@ class MessageScreen extends StatelessWidget {
                 decoration: InputDecoration(
                   hintText: "Search",
                   prefixIcon: Icon(Icons.search),
-                  hintStyle: TextStyle(
-                    fontSize: 18,
-                    color: Color(0XFF8E8E93),
-                  ),
+                  hintStyle: TextStyle(fontSize: 18, color: Color(0XFF8E8E93)),
                   border: InputBorder.none,
                 ),
               ),
             ),
           ),
           Expanded(
-            child: ListView.builder(itemBuilder: (context,index) {
-              return ListTile(
-                leading: UIHelper.customImage(imageUrl: messages[index]["img"].toString()),
-                title: Text(messages[index]["name"], style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600)),
-                subtitle: Text(messages[index]["text"]),
-                trailing: Icon(Icons.camera_alt_outlined),
-              );
-            },itemCount: messages.length,
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return ListTile(
+                  leading: UIHelper.customImage(
+                    imageUrl: messages[index]["img"].toString(),
+                  ),
+                  title: Text(
+                    messages[index]["name"],
+                    style: TextStyle(fontSize: 17, fontWeight: FontWeight.w600),
+                  ),
+                  subtitle: Text(messages[index]["text"]),
+                  trailing: Icon(Icons.camera_alt_outlined),
+                );
+              },
+              itemCount: messages.length,
             ),
-          )
+          ),
         ],
-      )
+      ),
     );
   }
 }
