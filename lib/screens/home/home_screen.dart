@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:instagram_flutter_app/Widgets/ui_helper.dart';
+import 'package:instagram_flutter_app/screens/location/location_screen.dart';
 import 'package:instagram_flutter_app/services/camera_service.dart';
 import 'package:instagram_flutter_app/screens/message/message_screen.dart';
 import 'package:instagram_flutter_app/utils/constants.dart';
@@ -29,12 +30,13 @@ class HomeScreen extends StatelessWidget {
         centerTitle: true,
         actions: [
           IconButton(
-            onPressed: () {},
-            icon: UIHelper.customImage(
-              imageUrl: "igtv2.png",
-              height: 30,
-              width: 30,
-            ),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LocationScreen()),
+              );
+            },
+            icon: Icon(CupertinoIcons.placemark, size: 35),
           ),
           IconButton(
             onPressed: () {
